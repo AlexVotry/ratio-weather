@@ -1,0 +1,41 @@
+<div class="modal {{slides[index].icon }}" [@modal]="modalState">
+
+<div class="modal-hourly" *ngIf="time.hourly">
+
+  <h4>{{ slides[index].formattedTime }}</h4>
+  temp: {{ slides[index].apparentTemperature }}&#176;
+  cloud cover: {{ slides[index].cloudCover }}
+  dewPoint: {{ slides[index].dewPoint }}
+  humidity: {{ slides[index].humidity }}
+  chance of rain: {{ slides[index].precipPobability }}
+  amount of rain: {{ slides[index].precipIntensity }}
+  wind speed: {{ slides[index].windSpeed }}
+</div>
+
+<div class="daily" *ngIf="time.daily">
+  <h4>{{ slides[index].time * 1000 | date : "EEEE" }}</h4>
+  temp: {{ slides[index].apparentTemperatureHigh }}&#176;
+  temp: {{ slides[index].apparentTemperatureHighTime }}
+  temp: {{ slides[index].apparentTemperatureLow}}&#176;
+  temp: {{ slides[index].apparentTemperatureLowTime }}&#176;
+  cloud cover: {{ slides[index].cloudCover }}
+  dewPoint: {{ slides[index].dewPoint }}
+  humidity: {{ slides[index].humidity }}
+  moonPhase:  {{ slides[index].moonPhase }}
+  sunrise: {{ slides[index].sunriseTime }}
+  sunset: {{ slides[index].sunsetTime }}
+  chance of rain: {{ slides[index].precipPobability }}
+  amount of rain: {{ slides[index].precipIntensity }}
+  wind speed: {{ slides[index].windSpeed }}
+</div>
+
+  <div class="modalButtons">
+    <a *ngIf="slides" (click)="reverseSlide()"><img src="../assets/icons/arrow-left.svg"></a>
+    <b class="dot"></b>
+    <a (click)="closeModal()"><img src="../assets/icons/close.svg"></a>
+    <b class="dot"></b>
+    <a *ngIf="slides" (click)="forwardSlide()"><img src="../assets/icons/arrow-right.svg"></a>
+  </div>
+
+</div>
+<div class="modalBackdrop" [@modalBackdrop]="modalBackdropState"> </div>

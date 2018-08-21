@@ -15,4 +15,14 @@ class DataStore {
 
 }
 
+export class BroadcasterModalService {
+
+  private _broadcaster = new BehaviorSubject(false);
+  update$ = this._broadcaster.asObservable();
+
+  sendModalUpdate(state) {
+    this._broadcaster.next(state);
+  }
+}
+
 export const store = new DataStore();

@@ -19,21 +19,21 @@
   </div>
 
   <div class="hourly">
-    <a href="#">
-      <ul class="hours" *ngIf="hours">
-        <li class="hour-boxes {{hour.icon}}" *ngFor="let hour of hours">
+    <ul class="hours" *ngIf="hours">
+      <li class="hour-boxes {{hour.icon}}" *ngFor="let hour of hours let i = index">
+        <a (click)="getHourlyModal(i)">
           <h4>{{ hour.formattedTime }}</h4>
           <img src="assets/{{hour.icon}}.png" alt="">
           {{ hour.apparentTemperature | number : 0 }}&#176;
-        </li>
-      </ul>
-    </a>
+        </a>
+      </li>
+    </ul>
   </div>
 
   <div class="daily">
-    <a href="#">
       <ul class="days" *ngIf="days">
-        <li class="day-boxes {{ day.icon }}" *ngFor="let day of days">
+        <li class="day-boxes {{ day.icon }}" *ngFor="let day of days let i = index">
+          <a (click)="getDailyModal(i)">
           <div class="top">
             <img src="assets/{{day.icon}}.png" alt="">
             <h3>{{ day.time * 1000 | date : "EEEE"}}</h3>
@@ -48,9 +48,12 @@
           <div class="info">
             low: {{ day.apparentTemperatureLow | number:0 }}&#176;
           </div>
+        </a>
         </li>
       </ul>
-    </a>
   </div>
+<div *ngIf="showModal">
+  <app-modal [time]='modalData'></app-modal>
+</div>
 
 </div>

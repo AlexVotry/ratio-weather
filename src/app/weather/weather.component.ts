@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../service/api.service';
-import { store } from '../service/data.service';
+import { store, BroadcasterModalService } from '../service/data.service';
 import { Subscription } from 'rxjs';
 import * as _ from 'lodash';
 
@@ -11,7 +11,7 @@ import * as _ from 'lodash';
 })
 export class WeatherComponent implements OnInit {
 
-  constructor(private _api: ApiService) { }
+  constructor(private _api: ApiService, private _modal: BroadcasterModalService) { }
 
   public days = [];
   public dailySummary;
@@ -19,7 +19,9 @@ export class WeatherComponent implements OnInit {
   public alerts;
   public hours = [];
   public hourlySummary;
+  public modalData;
   public location;
+  public showModal = false;
   public subscription: Subscription;
 
   ngOnInit() {
@@ -31,6 +33,8 @@ export class WeatherComponent implements OnInit {
         this.getWeatherinfo(latitude, longitude);
       });
     });
+    this.subscription = this._modal.update$
+    .subscribe(update => this.showModal = update);
   }
 
   getWeatherinfo(lat, long) {
@@ -62,6 +66,18 @@ export class WeatherComponent implements OnInit {
 
       hour.formattedTime = `${h}:00 ${postfix}`;
     })
+  }
+
+  getHourlyModal(chosen) {
+    this.showModal = true;
+    this.modalData = {index: chosen, hours: this.hours, hourly: true };
+    console.log(this.modalData)
+  }
+
+  getDailyModal(chosen) {
+    this.showModal = true;
+    this.modalData = {index: chosen, hours: this.days, daily: true };
+    console.log(this.modalData)
   }
 
 }
