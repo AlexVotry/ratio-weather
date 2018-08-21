@@ -1,0 +1,56 @@
+<div class="weather-app">
+
+  <div class="{{current.icon}} current" *ngIf="current">
+    <div class="top">
+      <h3>Current Weather:</h3>
+    </div>
+    <div class="info">
+      {{ current.summary }}
+    </div>
+
+    <div class="info">
+    {{ current.apparentTemperature | number:0 }}&#176;
+    </div>
+    <div class="info">
+      Wind Speed: {{ current.windSpeed | number:0 }}&#176;
+    </div>
+    <h2>{{ hourlySummary }}</h2>
+    <h2>{{ dailySummary }}</h2>
+  </div>
+
+  <div class="hourly">
+    <a href="#">
+      <ul class="hours" *ngIf="hours">
+        <li class="hour-boxes {{hour.icon}}" *ngFor="let hour of hours">
+          <h4>{{ hour.formattedTime }}</h4>
+          <img src="assets/{{hour.icon}}.png" alt="">
+          {{ hour.apparentTemperature | number : 0 }}&#176;
+        </li>
+      </ul>
+    </a>
+  </div>
+
+  <div class="daily">
+    <a href="#">
+      <ul class="days" *ngIf="days">
+        <li class="day-boxes {{ day.icon }}" *ngFor="let day of days">
+          <div class="top">
+            <img src="assets/{{day.icon}}.png" alt="">
+            <h3>{{ day.time * 1000 | date : "EEEE"}}</h3>
+          </div>
+          <div class="info">
+            {{ day.summary }}
+          </div>
+
+          <div class="info">
+            high: {{ day.apparentTemperatureHigh | number:0 }}&#176;
+          </div>
+          <div class="info">
+            low: {{ day.apparentTemperatureLow | number:0 }}&#176;
+          </div>
+        </li>
+      </ul>
+    </a>
+  </div>
+
+</div>

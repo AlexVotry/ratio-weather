@@ -1,1 +1,44 @@
-/* You can add global styles to this file, and also import other style files */
+ul {
+  list-style: none;
+}
+
+.clear-day {
+background: url(assets/sunnyDay.jpg) no-repeat;
+}
+
+.clear-night {
+  background-color: blue;
+}
+
+.partly-cloudy-day {
+  background-color: blue;
+  background: url(assets/partly-cloudy.gif) no-repeat;
+}
+
+.partly-cloudy-night {
+  background-color: red;
+}
+
+.cloudy {
+  background-color: purple;
+}
+
+.rain {
+  background-color: blue;
+}
+
+.sleet {
+  background-color: blue;
+}
+
+.snow {
+  background-color: blue;
+}
+
+.wind {
+  background-color: blue;
+}
+
+.fog {
+  background-color: blue;
+}

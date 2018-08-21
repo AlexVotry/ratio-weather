@@ -1,0 +1,95 @@
+
+a {
+  border: black;
+  color: white;
+  text-decoration: none;
+}
+
+.weather-app {
+  display: grid;
+  height: 400px;
+  width: 100vw;
+  // grid-gap: 5px;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 6fr 1fr;
+  grid-template-areas:
+  'current daily daily daily'
+  'current hourly hourly hourly';
+
+  .current {
+    grid-area: current;
+  }
+
+  .top {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .daily {
+    grid-area: daily;
+    .days {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      height: 200px;
+      .day-boxes {
+        height: 200px;
+        width: 200px;
+        display: block;
+        border: solid 2px white;
+        &:hover {
+          border-color: green;
+        }
+        img {
+          width: 20%;
+          height: 20%;
+          margin-right: 5%;
+        }
+      }
+      .info {
+        margin: 0 5% 5%;
+      }
+
+      .top {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+  }
+
+  .hourly {
+    grid-area: hourly;
+
+    .hours {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      height: 100px;
+
+      .hour-boxes {
+        text-align: center;
+        padding: 2px;
+        height: 75px;
+        width: 150px;
+        display: block;
+        border: solid 2px white;
+        &:hover {
+          border-color: green;
+        }
+
+        img {
+          display: block;
+          width: 30%;
+          height: 30%;
+          margin-right: 5%;
+          margin: 5px auto;
+        }
+      }
+
+      h4 {
+        margin: 0;
+      }
+    }
+  }
+}

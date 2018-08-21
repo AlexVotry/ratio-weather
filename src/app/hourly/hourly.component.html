@@ -1,0 +1,9 @@
+<h2>{{ summary }}</h2>
+
+<a href="#" ><ul class="hours" *ngIf="hours">
+  <li class="hour-boxes {{hour.icon}}" *ngFor="let hour of hours">
+    <h4>{{ hour.formattedTime }}</h4>
+    <img src="assets/{{hour.icon}}.png" alt="">
+    {{ hour.apparentTemperature }}&#176;
+  </li>
+</ul></a>

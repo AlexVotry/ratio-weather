@@ -3,7 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiBase: 'http://localhost:4200/',
+  weatherKey: '60cd0dc0048d10e5834fcc2dbf43d40b',
+  darkskyApi: "https://api.darksky.net/forecast/60cd0dc0048d10e5834fcc2dbf43d40b",
+  bingApi: 'http://dev.virtualearth.net/REST/v1/Locations?query=',
+  bingKey: '&key=AvjrMlRn091eIi7yxjcXk8vODjjQuQJnJJD1giXeSyZsq-bUEZu6eFMdKC2-RcSl'
 };
 
 /*
