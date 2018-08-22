@@ -26,7 +26,7 @@ export class WeatherService {
 
       hour.formattedTime = `${h} ${postfix}`;
     })
-
+    console.log(hours[0].formattedTime);
   }
 
   formatDays(days) {
