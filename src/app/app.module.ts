@@ -11,6 +11,7 @@ import { HourlyComponent } from './hourly/hourly.component';
 import { WeatherComponent } from './weather/weather.component';
 import { ModalComponent } from './modal/modal.component';
 import { BroadcasterModalService } from './service/data.service';
+import { WeatherService } from './weather/weather.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { BroadcasterModalService } from './service/data.service';
     HttpClientModule,
     BrowserAnimationsModule
   ],
-  providers: [ApiService, BroadcasterModalService],
+  providers: [ApiService, BroadcasterModalService, WeatherService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

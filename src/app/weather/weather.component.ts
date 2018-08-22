@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../service/api.service';
 import { store, BroadcasterModalService } from '../service/data.service';
+import { WeatherService } from './weather.service';
 import { Subscription } from 'rxjs';
-import * as _ from 'lodash';
+
 
 @Component({
   selector: 'app-weather',
@@ -11,7 +12,11 @@ import * as _ from 'lodash';
 })
 export class WeatherComponent implements OnInit {
 
-  constructor(private _api: ApiService, private _modal: BroadcasterModalService) { }
+  constructor(
+    private _api: ApiService,
+    private _modal: BroadcasterModalService,
+    private _service: WeatherService
+  ) { }
 
   public days = [];
   public dailySummary;
@@ -45,39 +50,20 @@ export class WeatherComponent implements OnInit {
       this.alerts = data.alerts;
       this.hourlySummary = data.hourly.summary;
       this.hours = data.hourly.data.slice(0, 24);
-      this.formatHours(this.hours);
+      this._service.formatHours(this.hours);
+      this._service.formatDays(this.days);
+      console.log('days: ', this.days);
     });
-  }
-
-  formatHours(hours) {
-    _.forEach(hours, (hour) => {
-      let rawTime = new Date(hour.time * 1000).getHours();
-      let postfix = "AM";
-      let h = rawTime;
-
-      if (rawTime >= 12) {
-        h = rawTime - 12;
-        postfix = "PM";
-      }
-
-      if (h == 0) {
-        h = 12;
-      }
-
-      hour.formattedTime = `${h}:00 ${postfix}`;
-    })
   }
 
   getHourlyModal(chosen) {
     this.showModal = true;
     this.modalData = {index: chosen, hours: this.hours, hourly: true };
-    console.log(this.modalData)
   }
 
   getDailyModal(chosen) {
     this.showModal = true;
     this.modalData = {index: chosen, hours: this.days, daily: true };
-    console.log(this.modalData)
   }
 
 }

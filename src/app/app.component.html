@@ -1,9 +1,10 @@
-<div>
+<div class="header">
+  
+  <input #city (keyup.enter)="addCity(city.value)" (blur)="addCity(city.value)" >
+  <input #state (keyup.enter)="addState(state.value)" (blur)="addCity(city.value)" value="WA">
   <h1>
     {{ city.value }} Weather
   </h1>
-  <input #city (keyup.enter)="addCity(city.value)" (blur)="addCity(city.value)" >
-  <input #state (keyup.enter)="addState(state.value)" (blur)="addCity(city.value)" value="WA">
 </div>
   <app-weather></app-weather>
 

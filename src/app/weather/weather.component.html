@@ -4,17 +4,21 @@
     <div class="top">
       <h3>Current Weather:</h3>
     </div>
-    <div class="info">
-      {{ current.summary }}
-    </div>
 
-    <div class="info">
-    {{ current.apparentTemperature | number:0 }}&#176;
+    <div class="current-info">
+      <div class="info">
+        Conditions: {{ current.summary }}
+      </div>
+      <div class="info">
+        Temp: {{ current.apparentTemperature }}&#176;
+      </div>
+      <div class="info">
+        Wind Speed: {{ current.windSpeed }} mph
+      </div>
     </div>
-    <div class="info">
-      Wind Speed: {{ current.windSpeed | number:0 }}&#176;
-    </div>
-    <h2>{{ hourlySummary }}</h2>
+  </div>
+
+  <div class="daily-summary">
     <h2>{{ dailySummary }}</h2>
   </div>
 
@@ -22,12 +26,16 @@
     <ul class="hours" *ngIf="hours">
       <li class="hour-boxes {{hour.icon}}" *ngFor="let hour of hours let i = index">
         <a (click)="getHourlyModal(i)">
-          <h4>{{ hour.formattedTime }}</h4>
+          <h5>{{ hour.formattedTime }}</h5>
           <img src="assets/{{hour.icon}}.png" alt="">
-          {{ hour.apparentTemperature | number : 0 }}&#176;
+          {{ hour.temp }}&#176;
         </a>
       </li>
     </ul>
+  </div>
+
+  <div class="hourly-summary">
+    <h2>{{ hourlySummary }}</h2>
   </div>
 
   <div class="daily">
@@ -38,15 +46,14 @@
             <img src="assets/{{day.icon}}.png" alt="">
             <h3>{{ day.time * 1000 | date : "EEEE"}}</h3>
           </div>
-          <div class="info">
-            {{ day.summary }}
-          </div>
-
-          <div class="info">
-            high: {{ day.apparentTemperatureHigh | number:0 }}&#176;
-          </div>
-          <div class="info">
-            low: {{ day.apparentTemperatureLow | number:0 }}&#176;
+          <div class="info-wrapper">
+            <div class="day-summary">
+              {{ day.summary }}
+            </div>
+            <div class="day-temps">
+              <p>high: {{ day.highTemp }}&#176;</p>
+              low: {{ day.lowTemp }}&#176;
+            </div>
           </div>
         </a>
         </li>

@@ -3,42 +3,61 @@ ul {
 }
 
 .clear-day {
-background: url(assets/sunnyDay.jpg) no-repeat;
+  background: url(assets/clear-day.jpg) no-repeat;
 }
 
 .clear-night {
-  background-color: blue;
+  background: url(assets/clear-night.jpg);
+  color: white;
+  a {
+    color: white;
+  }
 }
 
 .partly-cloudy-day {
-  background-color: blue;
-  background: url(assets/partly-cloudy.gif) no-repeat;
+  background: url(assets/partly-cloudy-day.jpg) no-repeat;
+  background-size: cover;
 }
 
 .partly-cloudy-night {
-  background-color: red;
+  background: url(assets/partly-cloudy-night.jpg) no-repeat;
+  background-size: cover;
+  color: white;
+  a {
+    color: white;
+  }
 }
 
 .cloudy {
-  background-color: purple;
+  background: url(assets/cloudy.jpg) no-repeat;
+  background-size: cover;
+  color: white;
+  a {
+    color: white;
+  }
 }
 
 .rain {
-  background-color: blue;
+  background: url(assets/rain.jpg);
+  background-size: cover;
 }
 
 .sleet {
-  background-color: blue;
+  background: url(assets/sleet.jpg);
+  background-size: cover;
 }
 
 .snow {
-  background-color: blue;
+  background: url(assets/snow.jpg) no-repeat;
+  background-size: cover;
 }
 
 .wind {
-  background-color: blue;
+  background: url(assets/wind.jpg) no-repeat 100%;
+  background-size: cover;
 }
 
 .fog {
-  background-color: blue;
+  background: url(assets/fog.jpg) no-repeat;
+  background-size: cover;
 }
