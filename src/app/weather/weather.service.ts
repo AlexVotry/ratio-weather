@@ -33,7 +33,7 @@ export class WeatherService {
     _.forEach(days, (day) => {
       day.highTime = this.readableTime(day.apparentTemperatureHighTime);
       day.lowTime = this.readableTime(day.apparentTemperatureLowTime);
-      day.sunrise = this.readableTime(day.sunriseTime);
+      day.sunrise = this.readableTime(day.apparentTemperatureLowTime);
       day.sunset = this.readableTime(day.sunsetTime);
       day.highTemp = Math.round(day.apparentTemperatureHigh);
       day.lowTemp = Math.round(day.apparentTemperatureLow);
