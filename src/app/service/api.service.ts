@@ -43,7 +43,6 @@ export class ApiService {
       }
     }
     let location = `${latitude},${longitude}`;
-
     return this.http.get<WeatherResponse>(`${apiUrl}/${location}`);
   }
 

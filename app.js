@@ -5,6 +5,7 @@ const favicon = require('serve-favicon');
 const logger = require('morgan');
 const apiRouter = require('./routes/weather');
 const app = express();
+require('dotenv').load();
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
