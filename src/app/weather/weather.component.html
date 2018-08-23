@@ -1,5 +1,4 @@
 <div class="weather-app">
-
   <div class="{{current.icon}} current" *ngIf="current">
     <div class="top">
       <h3>Current Weather:</h3>
@@ -15,6 +14,14 @@
       <div class="info">
         Wind Speed: {{ current.windSpeed }} mph
       </div>
+    </div>
+    <div class="alerts" *ngIf="alerts">
+      <ul>
+        <li *ngFor="let alert of alerts">
+          {{ alert.title }}
+        </li>
+
+      </ul>
     </div>
   </div>
 
