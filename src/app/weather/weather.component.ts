@@ -19,6 +19,7 @@ export class WeatherComponent implements OnInit {
   ) { }
 
   public days = [];
+  public data = {};
   public dailySummary;
   public current;
   public alerts;
@@ -52,7 +53,6 @@ export class WeatherComponent implements OnInit {
       this.hours = data.hourly.data.slice(0, 24);
       this._service.formatHours(this.hours);
       this._service.formatDays(this.days);
-      console.log('days: ', this.days);
     });
   }
 
