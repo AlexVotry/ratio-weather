@@ -1,15 +1,10 @@
-var createError = require('http-errors');
-var express = require('express');
-var cors = require('cors');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-
-var apiRouter = require('./routes/weather');
-
-var app = express();
-
-// app.use(cors());
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const favicon = require('serve-favicon');
+const logger = require('morgan');
+const apiRouter = require('./routes/weather');
+const app = express();
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
