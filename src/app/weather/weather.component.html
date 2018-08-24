@@ -14,23 +14,21 @@
       <div class="info">
         Wind Speed: {{ current.windSpeed }} mph
       </div>
+      <div class="current-alerts" *ngIf="alerts">
+        <ul>
+          <li *ngFor="let alert of alerts let i = index">
+            <a class="eachAlert" (click)="getAlertModal(i)">
+              <img src="assets/icons/alert.png" alt="alert">
+              <h3>{{ alert.title }}</h3>
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
-
-    <div class="current-alerts" *ngIf="alerts">
-      <ul>
-        <li *ngFor="let alert of alerts let i = index">
-          <a class="eachAlert" (click)="getAlertModal(i)">
-            <img src="assets/icons/alert.png" alt="alert">
-            <h3>{{ alert.title }}</h3>
-          </a>
-        </li>
-      </ul>
-    </div>
-
   </div>
 
-  <div class="daily-summary">
-    <h2>{{ dailySummary }}</h2>
+  <div class="hourly-summary">
+    <h2>{{ hourlySummary }}</h2>
   </div>
 
   <div class="hourly">
@@ -45,8 +43,8 @@
     </ul>
   </div>
 
-  <div class="hourly-summary">
-    <h2>{{ hourlySummary }}</h2>
+  <div class="daily-summary">
+    <h2>{{ dailySummary }}</h2>
   </div>
 
   <div class="daily">

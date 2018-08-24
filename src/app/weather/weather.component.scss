@@ -78,6 +78,9 @@ h2 {
             margin-right: 5%;
           }
         }
+        p {
+          margin: 2px;
+        }
       }
       .top {
         display: flex;
@@ -126,6 +129,41 @@ h2 {
       h5 {
         margin: 0;
         white-space: nowrap;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .weather-app {
+    display: flex;
+    flex-wrap: wrap;
+    .current {
+      height: 200px;
+      width: 100%;
+      .top {
+        margin-bottom: 5%;
+      }
+      .current-info {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        .current-alerts {
+          // color: red;
+          // ul {
+          //   padding: 0;
+          // }
+          .eachAlert {
+            // display: flex;
+            // flex-direction: row;
+            // align-items: baseline;
+            img {
+              width: 3%;
+              height: 3%;
+              // margin-right: 10px;
+            }
+          }
+        }
       }
     }
   }
