@@ -1,8 +1,28 @@
 .header {
-  // display: flex;
-  // align-items: baseline;
+  text-align: center;
+
+  input {
+    border: 2px solid blue;
+    border-radius: 25px;
+    width: 100px;
+    outline: none;
+    color: green;
+    margin: 0 5px;
+    &:focus {
+      background-color: green;
+      color: white;
+    }
+  }
+
+  input::placeholder {
+    color: green;
+  }
+
+  input:focus::placeholder {
+    color: white;
+  }
+
   h1 {
-    text-align: center;
     text-transform: capitalize;
     margin: 0 auto;
   }
