@@ -13,10 +13,10 @@
       <p>dewPoint:</p> {{ slides[index].dewPoint }}&#176;
     </div>
     <div class="modal-info">
-      <p>humidity:</p> {{ slides[index].humidity }}%
+      <p>humidity:</p> {{ slides[index].humidity * 100 }}%
     </div>
     <div class="modal-info">
-      <p>chance of rain:</p> {{ slides[index].precipProbability }}%
+      <p>chance of rain:</p> {{ slides[index].precipProbability * 100 }}%
     </div>
     <div class="modal-info">
       <p>amount of rain:</p> {{ slides[index].precipIntensity }}  in
@@ -42,7 +42,7 @@
       <p>rain fall:</p> {{ slides[index].precipIntensity }} in
     </div>
     <div class="modal-info">
-      <p>humidity:</p> {{ slides[index].humidity }}%
+      <p>humidity:</p> {{ slides[index].humidity * 100 }}%
     </div>
     <div class="modal-info">
       <p>sunrise:</p> {{ slides[index].sunrise }}
@@ -51,7 +51,7 @@
       <p>sunset:</p> {{ slides[index].sunset }}
     </div>
     <div class="modal-info">
-      <p>chance of rain:</p> {{ slides[index].precipProbability }}%
+      <p>chance of rain:</p> {{ slides[index].precipProbability * 100 }}%
     </div>
     <div class="modal-info">
       <p>wind speed:</p> {{ slides[index].windSpeed }} mph
