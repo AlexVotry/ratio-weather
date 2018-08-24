@@ -15,14 +15,18 @@
         Wind Speed: {{ current.windSpeed }} mph
       </div>
     </div>
-    <div class="alerts" *ngIf="alerts">
-      <ul>
-        <li *ngFor="let alert of alerts">
-          {{ alert.title }}
-        </li>
 
+    <div class="current-alerts" *ngIf="alerts">
+      <ul>
+        <li *ngFor="let alert of alerts let i = index">
+          <a class="eachAlert" (click)="getAlertModal(i)">
+            <img src="assets/icons/alert.png" alt="alert">
+            <h3>{{ alert.title }}</h3>
+          </a>
+        </li>
       </ul>
     </div>
+
   </div>
 
   <div class="daily-summary">

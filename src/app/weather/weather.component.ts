@@ -59,12 +59,17 @@ export class WeatherComponent implements OnInit {
 
   getHourlyModal(chosen) {
     this.showModal = true;
-    this.modalData = {index: chosen, hours: this.hours, hourly: true };
+    this.modalData = {index: chosen, slides: this.hours, hourly: true };
   }
 
   getDailyModal(chosen) {
     this.showModal = true;
-    this.modalData = {index: chosen, hours: this.days, daily: true };
+    this.modalData = {index: chosen, slides: this.days, daily: true };
+  }
+
+  getAlertModal(chosen) {
+    this.showModal = true;
+    this.modalData = {index: chosen, slides: this.alerts, icon: 'alerts', alerts: true };
   }
 
 }

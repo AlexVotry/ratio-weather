@@ -35,7 +35,7 @@ export class ModalComponent implements OnInit {
   ngOnInit() {
     this.delayOpening();
     this.index = this.time.index;
-    this.slides = this.time.hours;
+    this.slides = this.time.slides;
     console.log('time: ', this.slides);
   }
 

@@ -1,4 +1,4 @@
-<div class="modal {{slides[index].icon }}" [@modal]="modalState">
+<div class="modal {{slides[index].icon }} alerts" [@modal]="modalState">
 
 <div class="modal-hourly" *ngIf="time.hourly">
   <h1>{{ slides[index].formattedTime }}</h1>
@@ -59,12 +59,18 @@
   </div>
 </div>
 
+<div class="modal-alerts" *ngIf="time.alerts">
+  <h1>{{ slides[index].title }}</h1>
+  <p>{{ slides[index].description }}</p>
+</div>
+
+
   <div class="modalButtons">
-    <a *ngIf="slides" (click)="reverseSlide()"><img src="../assets/icons/arrow-left.svg"></a>
+    <a *ngIf="slides[1]" (click)="reverseSlide()"><img src="../assets/icons/arrow-left.svg"></a>
     <b class="dot"></b>
     <a (click)="closeModal()"><img src="../assets/icons/close.svg"></a>
     <b class="dot"></b>
-    <a *ngIf="slides" (click)="forwardSlide()"><img src="../assets/icons/arrow-right.svg"></a>
+    <a *ngIf="slides[1]" (click)="forwardSlide()"><img src="../assets/icons/arrow-right.svg"></a>
   </div>
 
 </div>
