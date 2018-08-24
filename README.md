@@ -10,4 +10,10 @@ To clone it locally:
 
 git clone: `git@github.com:AlexVotry/ratio-weather.git`
 
-then npm install
+`cd ratio-weather`
+
+`npm install`
+
+to run locally:
+
+`npm start`
