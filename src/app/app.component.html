@@ -3,8 +3,9 @@
   <h1>
     {{ city.value }} Weather
   </h1>
-  <p>Choose a place you're curious about: </p>
-  <input #city (keyup.enter)="addCity(city.value)" (blur)="addCity(city.value)" autofocus placeholder="city" >
+  <p>Type a place you're curious about: </p>
+  <input #city (keyup.enter)="addCity(city.value)" (blur)="addCity(city.value)"
+  (focus)="city.value=''" autofocus placeholder="city" >
   <input #state (keyup.enter)="addState(state.value)" (blur)="addCity(city.value)" placeholder="WA">
 </div>
   <app-weather></app-weather>

@@ -9,7 +9,7 @@ import { store } from './service/data.service';
 export class AppComponent {
   title = `${this.city} weather`;
 
-  city: string;
+  city: string = "Seattle";
   state: string = "WA";
 
   addCity(city: string) {

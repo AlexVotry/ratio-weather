@@ -3,28 +3,31 @@
     <div class="top">
       <h3>Current Weather:</h3>
     </div>
+    <div class="info-wrapper">
+      <div class="current-info">
+        <div class="info">
+          Conditions: {{ current.summary }}
+        </div>
+        <div class="info">
+          Temp: {{ current.apparentTemperature }}&#176;
+        </div>
+        <div class="info">
+          Wind Speed: {{ current.windSpeed }} mph
+        </div>
+      </div>
 
-    <div class="current-info">
-      <div class="info">
-        Conditions: {{ current.summary }}
-      </div>
-      <div class="info">
-        Temp: {{ current.apparentTemperature }}&#176;
-      </div>
-      <div class="info">
-        Wind Speed: {{ current.windSpeed }} mph
-      </div>
       <div class="current-alerts" *ngIf="alerts">
         <ul>
           <li *ngFor="let alert of alerts let i = index">
             <a class="eachAlert" (click)="getAlertModal(i)">
               <img src="assets/icons/alert.png" alt="alert">
-              <h3>{{ alert.title }}</h3>
+              <h4>{{ alert.title }}</h4>
             </a>
           </li>
         </ul>
       </div>
     </div>
+
   </div>
 
   <div class="hourly-summary">

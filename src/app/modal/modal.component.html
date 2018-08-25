@@ -2,6 +2,7 @@
 
 <div class="modal-hourly" *ngIf="time.hourly">
   <h1>{{ slides[index].formattedTime }}</h1>
+  <h3>{{ slides[index].summary }}</h3>
   <div class="modal-wrapper">
     <div class="modal-info">
       <p>temp:</p> {{ slides[index].temp }}&#176;

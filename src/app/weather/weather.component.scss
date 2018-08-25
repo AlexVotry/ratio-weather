@@ -39,9 +39,12 @@ h2 {
         display: flex;
         flex-direction: row;
         align-items: baseline;
+        h4 {
+          margin: 0;
+        }
         img {
-          width: 10%;
-          height: 10%;
+          width: 20px;
+          height: 20px;
           margin-right: 10px;
         }
       }
@@ -71,6 +74,7 @@ h2 {
         .top {
           display: flex;
           flex-direction: row;
+          align-items: center;
           img {
             margin-left: 5px;
             width: 20%;
@@ -81,11 +85,6 @@ h2 {
         p {
           margin: 2px;
         }
-      }
-      .top {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
       }
       .info-wrapper {
         height: 100px;
@@ -111,7 +110,6 @@ h2 {
       .hour-boxes {
         text-align: center;
         padding: 2px;
-        width: 200px;
         display: block;
         border: solid 4px white;
         &:hover {
@@ -137,31 +135,62 @@ h2 {
 @media only screen and (max-width: 1100px) {
   .weather-app {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    flex-direction: column;
     .current {
       height: 200px;
       width: 100%;
       .top {
         margin-bottom: 5%;
       }
-      .current-info {
+      .info-wrapper {
         display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         .current-alerts {
-          // color: red;
-          // ul {
-          //   padding: 0;
-          // }
-          .eachAlert {
-            // display: flex;
-            // flex-direction: row;
-            // align-items: baseline;
-            img {
-              width: 3%;
-              height: 3%;
-              // margin-right: 10px;
-            }
+          margin-left: 20px;
+        }
+      }
+    }
+
+    .hourly {
+      height: 150px;
+      .hours {
+        padding: 0;
+        display: inline-block;
+        height: 100vw;
+        overflow-y: auto;
+        overflow-x: hidden;
+        transform: rotate(-90deg);
+        transform-origin: right top;
+        transform:rotate(-90deg) translateY(-100px);
+        .hour-boxes {
+          font-size: 1.3em;
+          width: 100px;
+          height: 100px;
+          text-align: center;
+          padding: 2px;
+          border: solid 4px white;
+          transform: rotate(90deg);
+          transform-origin: right top;
+        }
+      }
+    }
+
+    .daily {
+      padding: 5px;
+      .days {
+        width: 100vw;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: flex-start;
+        .day-boxes {
+          width: 200px;
+          display: flex;
+          border: solid 5px white;
+          &:hover {
+            border-color: #ffde17;
+            box-shadow: 0px 5px 5px blue;
           }
         }
       }
