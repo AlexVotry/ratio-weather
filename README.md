@@ -1,6 +1,6 @@
 # RatioWeather
 
-This is a weather app that pulls data from Bing maps api and Darksky api.
+This is an Angular 6 weather app that pulls data from Bing maps api and Darksky api.
 
 I created a responsive css and used Angular animations for creating a modal and carousel.
 
