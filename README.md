@@ -4,6 +4,8 @@ This is an Angular 6 weather app that pulls data from Bing maps api and Darksky 
 
 I created a responsive css and used Angular animations for creating a modal and carousel.
 
+I used Rxjs for using observables.
+
 To clone it locally:
 
 git clone: `git@github.com:AlexVotry/ratio-weather.git`
